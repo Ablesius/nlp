@@ -11,7 +11,7 @@ def tf(term, document):
     Parameters:
         term: a string containing the search term
         document: a list representing the document text, split into tokens
-        (make sure that punctuation is split, too!)
+            (make sure that punctuation is split, too!)
 
     Return Value: a float representing the tf value
     """
@@ -56,6 +56,18 @@ def idf(term, corpus):
 
 def tfidf(term, document, corpus):
     """
-    TODO: write docstring
+    computes tf-idf (term frequency-inverse document frequency).
+    It can be used to indicate how important the term is in the
+    specified document in the specified corpus.
+
+    Parameters:
+        term: a string containing the search term
+        document: a list representing the document text, split into tokens
+            (make sure that punctuation is split, too!)
+        corpus: a list of lists; the outer list is the corpus, while the
+            inner lists should represent the document texts, split into
+            tokens (make sure that punctuation is split, too!)
+
+    Return Value: a float representing the tf-idf value
     """
     return tf(term, document) * idf(term, corpus)
